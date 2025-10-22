@@ -59,23 +59,47 @@
             <h1 id="first-section-header-text">The Best Cars you would ever see... Anywhere</h1>
             <span class="turnable-image-container">
                 <div class="turnable-box">
-                    <div class="turnable-image" style="background-image: url(./assets/halfer3.jpg);" onclick="resizeHalfer(this)"></div>
+                    <div class="turnable-image" style="background-image: url(./assets/halfer3.jpg);" onclick="resizeHalfer({
+                        id: 1,
+                        reference:this
+                    })"></div>
                     <h2>The fastest Cars</h2>
                 </div>
                 <div class="turnable-box">
-                    <div class="turnable-image" style="background-image: url(./assets/halfer2.jpg);" onclick="resizeHalfer(this)"></div>
+                    <div class="turnable-image" style="background-image: url(./assets/halfer2.jpg);" onclick="resizeHalfer({
+                        id: 2,
+                        reference:this
+                    })"></div>
                     <h2>The coolest Cars</h2>
                 </div>
                 <div class="turnable-box">
-                    <div class="turnable-image" style="background-image: url(./assets/halfer1.jpg);" onclick="resizeHalfer(this)"></div>
+                    <div class="turnable-image" style="background-image: url(./assets/halfer1.jpg);" onclick="resizeHalfer({
+                        id: 3,
+                        reference:this
+                    })"></div>
                     <h2>The sleekest Cars</h2>
                 </div>
                 <div class="turnable-box">
-                    <div class="turnable-image" style="background-image: url(./assets/halfer4.jpg);" onclick="resizeHalfer(this)"></div>
+                    <div class="turnable-image" style="background-image: url(./assets/halfer4.jpg);" onclick="resizeHalfer({
+                        id: 4,
+                        reference:this
+                    })"></div>
                     <h2>The cleanest Cars</h2>
                 </div>
             </span>
         </div>
+    </section>
+
+    <section id="widened-turnable">
+        <div>
+            <button onclick="removeTurnable()" style="background-color: transparent;display: flex;justify-content: flex-start;border: none;font-size: x-large;">X</button>
+        </div>
+        <div style="margin: 25px;">
+            <h1 id="in-turnable-header">Something</h1>
+            <span class="horizontal-line"></span>
+            <p id="in-turnable-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, natus quo adipisci corrupti accusamus nobis voluptates doloribus modi, assumenda nam libero, quis repudiandae! Alias magnam dicta autem ab, veritatis dignissimos.</p>
+        </div>
+        
     </section>
 
     <section class="second-section">

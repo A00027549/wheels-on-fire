@@ -58,7 +58,6 @@
 .turnable-box {
     position: sticky;
     top: 0;
-    z-index: 1;
     margin-bottom: 20px;
 }
 
@@ -82,13 +81,39 @@
     animation: widen 0.2s ease-in forwards;
 }
 
-.widened-turnable{
+#widened-turnable{
     position:fixed;
+    background-color: aqua;
+    background-position: center;
+    background-size: cover;
     left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
     background-size: cover;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding-bottom: 50px;
+}
+.horizontal-line{
+    background-color: white;
+    display: flex;
+    width: 50%;
+    padding: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    animation: stretch 1s ease-out forwards;
+}
+#in-turnable-header, #in-turnable-p{
+    animation: viewIn 1s ease-in forwards;
+}
+@keyframes stretch {
+    from{width: 0%;}
+    to{
+        width: 50%;
+    }
 }
 
 @keyframes viewIn {
