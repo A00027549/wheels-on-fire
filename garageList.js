@@ -122,18 +122,78 @@ cars.forEach(car => {
     <img src="${car.image_url}" alt="${car.name}">
     <div class="car-details">
       <h2>${car.name} (${car.year})</h2>
-      <p><strong>Engine:</strong> ${car.engine_type}</p>
-      <p><strong>Horsepower:</strong> ${car.horsepower} HP</p>
-      ${car.top_speed ? `<p><strong>Top Speed:</strong> ${car.top_speed} mph</p>` : ''}
-      ${car.acceleration_0_60 ? `<p><strong>0–60 mph:</strong> ${car.acceleration_0_60}s</p>` : ''}
-      ${car.range ? `<p><strong>Range:</strong> ${car.range} miles</p>` : ''}
-      <p><strong>Color:</strong> ${car.color}</p>
-      <p><strong>Mileage:</strong> ${car.mileage.toLocaleString()} miles</p>
-      <p class="price">$${car.price.toLocaleString()}</p>
-      <p>${car.description}</p>
-      <div class="features">
-        <strong>Features:</strong>
-        <ul>${car.features.map(f => `<li>${f}</li>`).join('')}</ul>
+      <p><svg fill="#ffffff" height="20px" width="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 511.998 511.998" xml:space="preserve" stroke="#ffffff">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+      <g id="SVGRepo_iconCarrier"> <g> <g> <path d="M462.998,253.8l-36.958-36.958c-3.128-3.128-7.371-4.886-11.794-4.886c-4.424,0-8.667,1.757-11.794,4.886l-9.284,9.284 l-79.3-79.301v-34.237c0-9.212-7.469-16.681-16.681-16.681h-5.323V70.982h9.982c5.26,0,10.214-2.481,13.363-6.696 c3.148-4.215,4.125-9.667,2.633-14.712l-11.12-37.62C304.624,4.864,298.114,0,290.723,0h-69.366 c-7.391,0-13.902,4.864-15.997,11.952l-11.12,37.62c-1.491,5.045-0.515,10.498,2.633,14.712c3.149,4.215,8.102,6.696,13.363,6.696 h9.982v24.926h-4.211c-9.212,0-16.681,7.469-16.681,16.681v33.124l-80.453,80.454l-9.326-9.326c-6.513-6.513-17.075-6.513-23.59,0 l-36.958,36.958c-6.514,6.513-6.514,17.075,0,23.59l9.435,9.435c-6.514,6.513-6.514,17.075,0,23.59 c3.257,3.257,7.526,4.886,11.794,4.886c4.268,0,8.538-1.629,11.794-4.886l16.12,16.12c-6.514,6.513-6.514,17.075,0,23.59 c3.257,3.257,7.526,4.886,11.794,4.886c4.268,0,8.538-1.629,11.794-4.886l16.12,16.12c-6.514,6.513-6.514,17.075,0,23.59 c3.257,3.257,7.526,4.886,11.794,4.886s8.538-1.629,11.794-4.886l8.413,8.413v97.073c0,9.212,7.468,16.681,16.681,16.681H325.54 c9.212,0,16.681-7.469,16.681-16.681v-97.156l8.331-8.331c3.257,3.257,7.526,4.886,11.794,4.886s8.538-1.629,11.794-4.886 c6.514-6.513,6.514-17.075,0-23.59l16.12-16.12c3.257,3.257,7.526,4.886,11.794,4.886c4.268,0,8.538-1.629,11.794-4.886 c6.514-6.513,6.514-17.075,0-23.59l16.12-16.12c3.257,3.258,7.526,4.886,11.794,4.886s8.538-1.629,11.794-4.886 c6.514-6.513,6.514-17.075,0-23.59l9.435-9.435C469.512,270.875,469.512,260.313,462.998,253.8z M256.596,386.569 c-21.431,0-38.805-17.373-38.805-38.805c0-21.431,17.373-38.805,38.805-38.805s38.805,17.373,38.805,38.805 C295.401,369.195,278.028,386.569,256.596,386.569z M353.306,265.986c-6.513-6.513-17.075-6.513-23.59,0 c-6.514,6.513-6.514,17.075,0,23.59l-6.598,6.598c-15.812-19.593-40-32.158-67.079-32.158c-27.1,0-51.304,12.585-67.115,32.204 l-6.643-6.643c6.514-6.513,6.514-17.075,0-23.59c-6.513-6.513-17.075-6.513-23.59,0l-16.12-16.12 c0.517-0.517,0.979-1.068,1.413-1.633l74.063-74.064h75.983l73.755,73.756c0.496,0.674,1.03,1.33,1.639,1.939L353.306,265.986z"/> </g> </g> </g>
+</svg> ${car.engine_type}</p>
+      <p><svg fill="#ffffff" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+      <g id="SVGRepo_iconCarrier">
+      <path d="M12,10h7L8,22l3-9H5L13,2Z"/>
+      </g>
+      </svg> ${car.horsepower} HP</p>
+      ${car.top_speed ? `<p><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <path d="M6.34315 17.6569C5.22433 16.538 4.4624 15.1126 4.15372 13.5607C3.84504 12.0089 4.00346 10.4003 4.60896 8.93853C5.21446 7.47672 6.23984 6.22729 7.55544 5.34824C8.87103 4.46919 10.4177 4 12 4C13.5823 4 15.129 4.46919 16.4446 5.34824C17.7602 6.22729 18.7855 7.47672 19.391 8.93853C19.9965 10.4003 20.155 12.0089 19.8463 13.5607C19.5376 15.1126 18.7757 16.538 17.6569 17.6569" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path d="M12 12L16 10" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g>
+
+</svg> ${car.top_speed} mph</p>` : ''}
+      ${car.acceleration_0_60 ? `<p><svg fill="#ffffff" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 312.512 312.512" xml:space="preserve" stroke="#ffffff">
+
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <g> <g id="Double_Arrow_Drop_Right"> <path d="M140.675,147.638L140.675,147.638L20.733,27.443c-7.627-7.94-21.029-1.949-20.728,8.83v239.92 c-0.289,10.731,13.017,16.554,20.632,8.927l120.026-120.291C145.415,160.077,145.415,152.378,140.675,147.638L140.675,147.638z M24.126,247.249V65.206l90.829,91.021L24.126,247.249z"/> <path d="M308.967,147.758L308.967,147.758L308.967,147.758L189.025,27.563c-7.627-7.94-21.029-1.949-20.728,8.83v239.92 c-0.289,10.731,13.017,16.554,20.632,8.926l120.026-120.291C313.695,160.197,313.695,152.498,308.967,147.758z M192.418,247.369 V65.326l90.829,91.021L192.418,247.369z"/> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g>
+
+</svg> ${car.acceleration_0_60}s</p>` : ''}
+      ${car.range ? `<p><svg width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#ffffff" fill="none">
+
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier">
+
+<path d="M17.94,54.81a.1.1,0,0,1-.14,0c-1-1.11-11.69-13.23-11.69-21.26,0-9.94,6.5-12.24,11.76-12.24,4.84,0,11.06,2.6,11.06,12.24C28.93,41.84,18.87,53.72,17.94,54.81Z"/>
+
+<circle cx="17.52" cy="31.38" r="4.75"/>
+
+<path d="M49.58,34.77a.11.11,0,0,1-.15,0c-.87-1-9.19-10.45-9.19-16.74,0-7.84,5.12-9.65,9.27-9.65,3.81,0,8.71,2,8.71,9.65C58.22,24.52,50.4,33.81,49.58,34.77Z"/>
+
+<circle cx="49.23" cy="17.32" r="3.75"/>
+
+<path d="M17.87,54.89a28.73,28.73,0,0,0,3.9.89"/>
+
+<path d="M24.68,56.07c2.79.12,5.85-.28,7.9-2.08,5.8-5.09,2.89-11.25,6.75-14.71a16.72,16.72,0,0,1,4.93-3" stroke-dasharray="7.8 2.92"/>
+
+<path d="M45.63,35.8a23,23,0,0,1,3.88-.95"/>
+
+</g>
+
+</svg> ${car.range} miles</p>` : ''}
+      <p><svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff">
+
+<g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+
+<g id="SVGRepo_iconCarrier"> <path d="M10 4.5V18C10 19.08 9.55999 20.07 8.85999 20.79L8.82001 20.83C8.73001 20.92 8.63001 21.01 8.54001 21.08C8.24001 21.34 7.89999 21.54 7.54999 21.68C7.43999 21.73 7.33 21.77 7.22 21.81C6.83 21.94 6.41 22 6 22C5.73 22 5.46001 21.97 5.20001 21.92C5.07001 21.89 4.94 21.86 4.81 21.82C4.65 21.77 4.50001 21.72 4.35001 21.65C4.35001 21.64 4.35 21.64 4.34 21.65C4.06 21.51 3.79001 21.35 3.54001 21.16L3.53 21.15C3.4 21.05 3.28001 20.95 3.17001 20.83C3.06001 20.71 2.95 20.59 2.84 20.46C2.65 20.21 2.49001 19.94 2.35001 19.66C2.36001 19.65 2.36001 19.65 2.35001 19.65C2.35001 19.65 2.35 19.64 2.34 19.63C2.28 19.49 2.22999 19.34 2.17999 19.19C2.13999 19.06 2.10999 18.93 2.07999 18.8C2.02999 18.54 2 18.27 2 18V4.5C2 3 3 2 4.5 2H7.5C9 2 10 3 10 4.5Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M22 16.5V19.5C22 21 21 22 19.5 22H6C6.41 22 6.83 21.94 7.22 21.81C7.33 21.77 7.43999 21.73 7.54999 21.68C7.89999 21.54 8.24001 21.34 8.54001 21.08C8.63001 21.01 8.73001 20.92 8.82001 20.83L8.85999 20.79L15.66 14H19.5C21 14 22 15 22 16.5Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M4.81 21.8199C4.21 21.6399 3.64001 21.3099 3.17001 20.8299C2.69001 20.3599 2.35999 19.7899 2.17999 19.1899C2.56999 20.4399 3.56 21.4299 4.81 21.8199Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M18.37 11.2899L15.66 14L8.85999 20.7899C9.55999 20.0699 10 19.08 10 18V8.33995L12.71 5.62996C13.77 4.56996 15.19 4.56996 16.25 5.62996L18.37 7.74996C19.43 8.80996 19.43 10.2299 18.37 11.2899Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M6 19C6.55228 19 7 18.5523 7 18C7 17.4477 6.55228 17 6 17C5.44772 17 5 17.4477 5 18C5 18.5523 5.44772 19 6 19Z" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> </g>
+
+</svg> ${car.color}</p>
+      <div class="extras">
+        <p><strong>Mileage:</strong> ${car.mileage.toLocaleString()} miles</p>
+        <p class="price">$${car.price.toLocaleString()}</p>
+        <p>${car.description}</p>
+        <div class="features">
+          <strong>Features:</strong>
+          <ul>${car.features.map(f => `<li>${f}</li>`).join('')}</ul>
+        </div>
       </div>
     </div>
   `;

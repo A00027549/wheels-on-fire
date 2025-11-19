@@ -8,15 +8,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans+Expanded:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/x-icon" href="../assets/logo icon.png.png">
-    <title>Contact Us</title>
+    <script src="../scrollevents.js"></script>
+    <script src="./collectionScript.js"></script>
+    <link rel="icon" type="image/x-icon" href="../assets/logo icon.png">
+    <title>Events</title>
 </head>
 <body>
     <header class="header" id="header">
         <nav>
             <span id="logo-container">
                 <img src="../assets/logo.png" alt="car logo" srcset="" width="100">
-                <h3 style="font-weight: 600;">Wheels on Fire</h3>
+                <h3 style="font-weight: 600;">Wheels On Fire</h3>
             </span>
             <ul class="list-container">
                 <li class="list-item">
@@ -31,42 +33,26 @@
                 </li>
                 <li class="list-item">
                     <div class="nav-text-cont">
-                        <a href="../about/index.html">About</a><!-- remember to change to /about later when uploading to the server -->
+                        <a href="">About</a><!-- remember to change to /about later when uploading to the server -->
                     </div>
                 </li>
                 <li class="list-item">
                     <div class="nav-text-cont">
-                        <a href="">Contact</a>
+                        <a href="../contact/index.html">Contact</a>
                     </div>
                 </li>
             </ul>
         </nav>
+
+        <section class="hero">
+            <!-- This div is for the background line at the right of the screen -->
+            <div class="backgrounder" id="car-background"></div>
+
+            <div class="car-display" id="car-display"></div>
+
+            <h1 class="main-const-heading">Our newest additions up for display</h1>
+        </section>
     </header>
-
-    <section id="form-section">
-        <div class="lc-text-cont">
-            <span>
-                <h1 class="lc-text">Send us a message</h1>
-            </span>
-        </div>
-        <div>
-            <form>
-                <span class="separator"></span>
-                <!-- Email -->
-                 <span id="email-container" class="input-container">
-                    <label for="email">Enter your Email</label><br>
-                    <input type="email" name="email" id="email" placeholder="Enter your email here">
-                 </span>
-
-                 <!--  -->
-                 <span id="message-container" class="input-container">
-                    <label for="message">Enter your Message</label><br>
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message here"></textarea>
-                 </span>
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-    </section>
 
 
     <!-- Footer Page -->

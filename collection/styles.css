@@ -1,0 +1,28 @@
+.hero{
+    /* background-color: rgb(83, 95, 95); */
+    height: 100vh;
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+}
+.backgrounder{
+    position: absolute;
+    height: 100%;
+    right: 200px;
+    /* background-color:brown; */
+    width: 20vw;
+    box-shadow: 
+        rgba(67, 91, 112, 0.42) 0px 60px 123px -25px,
+        rgba(62, 81, 99, 0.08) 0px 35px 75px -35px;
+    transform: rotate(5deg);
+}
+.car-display{
+    /* background-color: blue; */
+    width: 80%;
+    height: 80%;
+    background-repeat: no-repeat;
+}
+.main-const-heading{
+    font-weight: 400;
+    font-size: 3rem;
+}

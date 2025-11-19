@@ -87,3 +87,13 @@ footer{
     font-weight: 300;
     font-size: 4rem;
 }
+
+@media screen and (max-width: 900px) {
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-logo > #logo-container {
+        flex-direction: column;
+    }
+}
