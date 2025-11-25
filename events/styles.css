@@ -26,3 +26,9 @@
     font-weight: 400;
     font-size: 3rem;
 }
+.first-event-details-cont{
+    background-image: linear-gradient(to bottom, #00000063, #000000),url(../assets/event\ 1.jpg);
+    display: flex;
+    width: 90vw;
+    height: 70vh;
+}

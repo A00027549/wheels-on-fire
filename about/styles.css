@@ -1,3 +1,9 @@
+body{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+::-webkit-scrollbar { display: none; }
+
 #about-title-container{
     display: flex;
     width: 600px;
@@ -47,7 +53,7 @@
     border-radius: 20px;
     background-color: blue;
     padding: 10px;
-    min-height: 90vh;
+    min-height: 85vh;
     animation: slideUp 1s ease forwards;
     background-repeat: no-repeat;
     background-size: cover;
@@ -72,6 +78,12 @@
     left: 10px;
 }
 
+
+.up-arrow:hover > span > svg , .down-arrow:hover > span > svg {
+    width: 90px;
+    height: 90px;
+}
+
 @keyframes fade-in {
     from{
         opacity: 0;
@@ -90,3 +102,12 @@
     }
 }
 
+@media screen and (max-width: 1000px) {
+    #about-title{
+        font-size: 3.3rem;
+        font-weight: 400;
+    }
+    #about-title-container{
+        max-width: 200px;
+    }
+}
