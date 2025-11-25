@@ -1,6 +1,6 @@
 let pointer = 0;
-let max = 0;
 let accumulator = 0;
+let startY = 0;
 const allBoxes = document.querySelectorAll(".info-section-container");
 
 window.addEventListener("DOMContentLoaded",(ev)=>{
@@ -12,24 +12,41 @@ window.addEventListener("DOMContentLoaded",(ev)=>{
     },5000)
 });
 
-window.addEventListener("wheel", (ev) => {
-    accumulator = Math.max(0, accumulator + ev.deltaY);
 
+// desktop wheel
+window.addEventListener("wheel", ev => {
+    handleScroll(ev.deltaY, ev);
+}, { passive: false });
+
+// mobile touch
+window.addEventListener("touchstart", ev => {
+    startY = ev.touches[0].clientY;
+}, { passive: true });
+
+window.addEventListener("touchmove", ev => {
+    const y = ev.touches[0].clientY;
+    const deltaY = startY - y;   // emulate wheel delta
+    startY = y;
+
+    handleScroll(deltaY, ev);
+}, { passive: false });
+
+function handleScroll(deltaY, ev) {
+    accumulator = Math.max(0, accumulator + deltaY);
     let currentSection = Math.floor(accumulator / 500);
 
     if (currentSection < allBoxes.length) {
         ev.preventDefault();
+
         if (currentSection < 0) currentSection = 0;
 
         if (pointer !== currentSection) {
-            pointer = currentSection >= allBoxes.length
-                ? allBoxes.length - 1
-                : currentSection;
-
+            pointer = Math.min(currentSection, allBoxes.length - 1);
             refreshSections();
         }
     }
-}, { passive: false });
+}
+
 
 
 const refreshSections = () => {
