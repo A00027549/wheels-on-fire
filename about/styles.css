@@ -31,7 +31,6 @@
     width: 2px;
 }
 
-
 .about-info{
     width: 80%;
     padding: 15px;
@@ -39,6 +38,19 @@
 
 .info-section-container{
     margin-bottom: 30px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: fit-content;
+    max-width: 95vw;
+    border: hidden;
+    border-radius: 20px;
+    background-color: blue;
+    padding: 10px;
+    min-height: 90vh;
+    animation: slideUp 1s ease forwards;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .info-section-header{
@@ -51,6 +63,13 @@
     word-spacing: 0.5em;
     text-justify: distribute-all-lines;
     line-height: 30px;
+    padding: 10px;
+}
+
+.arrow-buttons {
+    position: fixed;
+    bottom: 50px;
+    left: 10px;
 }
 
 @keyframes fade-in {
@@ -61,3 +80,13 @@
         opacity: 1;
     }
 }
+
+@keyframes slideUp {
+    from {
+        transform: translateY(-75px);
+    }
+    to {
+        transform: translate(0);
+    }
+}
+
