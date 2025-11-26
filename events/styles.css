@@ -34,7 +34,19 @@
 }
 
 .first-event-heading, .newsletter-subscribe-heading{
-
     font-size: 2.5rem;
     font-weight: 300;
+}
+
+.maps-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.maps-container > iframe{
+    width: 75%;
+    height: 90vh;
+    border: none;
+    border-radius: 20px;
 }
