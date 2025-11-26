@@ -75,6 +75,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    width: 50%;
 }
 .timing{
     box-shadow: 
@@ -86,4 +87,16 @@
     font-size: 4rem;
     margin-right: 10px;
     margin-left: 10px;
+}
+@media screen and (max-width:1000px) {
+    .upcoming-event{
+        display: flex;
+        flex-direction: column;
+    }
+    .event-video{
+        width: 100%;
+    }
+    .upcoming-event-details{
+        width: 100%;
+    }
 }

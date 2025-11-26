@@ -228,8 +228,11 @@
     }
 }
 
-@media only screen and(max-width:500px) {
+@media screen and (max-width:500px) {
     .turnable-image-container{
         flex-direction: column;
+    }
+    .header{
+        height: max-content;
     }
 }
