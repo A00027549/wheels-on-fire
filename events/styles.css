@@ -26,11 +26,27 @@
     font-weight: 400;
     font-size: 3rem;
 }
+.first-event{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .first-event-details-cont{
     background-image: linear-gradient(to bottom, #00000063, #000000),url(../assets/event\ 1.jpg);
     display: flex;
-    width: 90vw;
-    height: 70vh;
+    width: 95%;
+    height: 90vh;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+    border: hidden;
+    border-radius: 20px;
+    flex-direction: column;
+}
+
+.first-event-details-cont > h1, .first-event-details-cont > p{
+    text-align: center;
+    margin: 20px;
 }
 
 .first-event-heading, .newsletter-subscribe-heading{
