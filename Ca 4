@@ -1,4 +1,4 @@
 For our fouth client request we were asked to use lighthouse to analyse our page, as you can see in the attached file we achieved a 100 percent
-accessibility. We were also asked to add an aditional page to the website, for this request we added an additional page called "Events". On this
+accessibility(you can see this in the file called "lighthouse_report.png). We were also asked to add an aditional page to the website, for this request we added an additional page called "Events". On this
 page we added a map and a video detailing an upcoming event and where it is. The final request was to make the website more responsive on a mobile
 device, we did this be rearanging some of the text in an effort to make it line up better on a mobile device.
