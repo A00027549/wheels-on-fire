@@ -50,3 +50,40 @@
     border: none;
     border-radius: 20px;
 }
+.upcoming-event{
+    display: flex;
+}
+.timer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 40%;
+}
+
+.event-video{
+    width: 50%;
+    height: max-content;
+    border: hidden;
+    border-radius: 20px;
+    margin: 20px;
+    overflow: hidden;
+}
+.event-video > video{
+    height: 80vh;
+}
+.upcoming-event-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.timing{
+    box-shadow: 
+        rgba(67, 91, 112, 0.42) 0px 60px 123px -25px,
+        rgba(62, 81, 99, 0.08) 0px 35px 75px -35px;
+}
+.timing > h1 {
+    font-weight: 300;
+    font-size: 4rem;
+    margin-right: 10px;
+    margin-left: 10px;
+}
