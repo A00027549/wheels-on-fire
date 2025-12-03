@@ -1,6 +1,4 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-
     const form = document.getElementById("form");
     const successMsg = document.getElementById("success-message");
 
@@ -20,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const submitBtn = form.querySelector('button[type="submit"]');
 
-    //functions to validate data
     function validateFirstName() {
         if (firstName.value.trim().length < 2) {
             errors.firstName.textContent = "First name must be at least 2 characters.";
@@ -79,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         submitBtn.classList.toggle("disabled", !valid);
     }
 
-    //validate as the user enters data
+    // Validate as the user enters data
     firstName.addEventListener("input", () => { validateFirstName(); checkFormValidity(); });
     lastName.addEventListener("input", () => { validateLastName(); checkFormValidity(); });
     email.addEventListener("input", () => { validateEmail(); checkFormValidity(); });
@@ -88,18 +85,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-    
-        checkFormValidity();
-    
+
         const invalidFields = [];
-    
+
         if (!validateFirstName()) invalidFields.push(firstName);
         if (!validateLastName()) invalidFields.push(lastName);
         if (!validateEmail()) invalidFields.push(email);
         if (!validateInquiry()) invalidFields.push(inquiry);
         if (!validateMessage()) invalidFields.push(message);
-    
-        //shake invalid fields with the shaking animation
+
+        // Shake invalid fields
         if (invalidFields.length > 0) {
             invalidFields.forEach(field => {
                 field.classList.add("shake");
@@ -107,31 +102,29 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             return;
         }
-    
-        //show the loading spinner
+
+        // Show the loading spinner
         submitBtn.classList.add("loading");
         submitBtn.disabled = true;
-    
-        setTimeout(() => {
-    
-            submitBtn.classList.remove("loading");
 
+        setTimeout(() => {
+            submitBtn.classList.remove("loading");
             successMsg.textContent = "Your message has been sent successfully!";
             successMsg.classList.add("show");
-    
-            //reset the form
+
+            // Reset the form
             form.reset();
-    
+            Object.values(errors).forEach(error => error.textContent = ""); // Clear errors
+            checkFormValidity(); // Recheck form validity
+
             submitBtn.disabled = true;
             submitBtn.classList.add("disabled");
-    
-            //hide the success message after 4 seconds
+
+            // Hide the success message after 4 seconds
             setTimeout(() => {
                 successMsg.classList.remove("show");
             }, 4000);
-    
+
         }, 1200);
     });
 });
-
-
