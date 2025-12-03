@@ -49,6 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
         errors.email.textContent = "";
         return true;
     }
+    
+    function validateFooterEmail() {
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!pattern.test(footerEmail.value.trim())) {
+        footerEmailError.textContent = "Please enter a valid email.";
+        return false;
+    }
+    footerEmailError.textContent = "";
+    return true;
+    }
+
 
     function validateInquiry() {
         if (!inquiry.value) {
