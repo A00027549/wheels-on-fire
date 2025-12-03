@@ -86,30 +86,51 @@ document.addEventListener("DOMContentLoaded", () => {
     inquiry.addEventListener("change", () => { validateInquiry(); checkFormValidity(); });
     message.addEventListener("input", () => { validateMessage(); checkFormValidity(); });
 
-    //form submit event
     form.addEventListener("submit", (e) => {
-        e.preventDefault(); //to prevent the url from filling up with them form data
-
+        e.preventDefault();
+    
         checkFormValidity();
-        if (submitBtn.disabled) return;
-
-        //success
-        successMsg.textContent = "Your message has been sent successfully!";
-        successMsg.classList.add("show");
-
-        //clear the form
-        form.reset();
-
-        //and disable the button again
+    
+        const invalidFields = [];
+    
+        if (!validateFirstName()) invalidFields.push(firstName);
+        if (!validateLastName()) invalidFields.push(lastName);
+        if (!validateEmail()) invalidFields.push(email);
+        if (!validateInquiry()) invalidFields.push(inquiry);
+        if (!validateMessage()) invalidFields.push(message);
+    
+        //shake invalid fields with the shaking animation
+        if (invalidFields.length > 0) {
+            invalidFields.forEach(field => {
+                field.classList.add("shake");
+                setTimeout(() => field.classList.remove("shake"), 400);
+            });
+            return;
+        }
+    
+        //show the loading spinner
+        submitBtn.classList.add("loading");
         submitBtn.disabled = true;
-        submitBtn.classList.add("disabled");
-
+    
         setTimeout(() => {
-            successMsg.classList.remove("show");
-        }, 4000);
+    
+            submitBtn.classList.remove("loading");
+
+            successMsg.textContent = "Your message has been sent successfully!";
+            successMsg.classList.add("show");
+    
+            //reset the form
+            form.reset();
+    
+            submitBtn.disabled = true;
+            submitBtn.classList.add("disabled");
+    
+            //hide the success message after 4 seconds
+            setTimeout(() => {
+                successMsg.classList.remove("show");
+            }, 4000);
+    
+        }, 1200);
     });
 
-    //we check that the form is valid when the website is first loaded
-    checkFormValidity();
-});
 
