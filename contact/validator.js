@@ -1,4 +1,4 @@
-<script>
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const form = document.getElementById("form");
@@ -101,4 +101,4 @@ document.addEventListener("DOMContentLoaded", () => {
     //make the form invalid as soon as the user loads the page. like when the page is firstly loaded we call this function
     checkFormValidity();
 });
-</script>
+
