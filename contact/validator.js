@@ -2,15 +2,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     const form = document.getElementById("form");
+    const successMsg = document.getElementById("success-message");
 
-    //inputs
     const firstName = document.getElementById("first-name");
     const lastName = document.getElementById("last-name");
     const email = document.getElementById("email");
     const inquiry = document.getElementById("inquiry-purpose");
     const message = document.getElementById("message");
 
-    //errors section
     const errors = {
         firstName: document.getElementById("first-name-error"),
         lastName: document.getElementById("last-name-error"),
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const submitBtn = form.querySelector('button[type="submit"]');
 
-    //validation functions
+    //functions to validate data
     function validateFirstName() {
         if (firstName.value.trim().length < 2) {
             errors.firstName.textContent = "First name must be at least 2 characters.";
@@ -41,9 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function validateEmail() {
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email.value.trim())) {
-            errors.email.textContent = "Please enter a valid email address.";
+        const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!pattern.test(email.value.trim())) {
+            errors.email.textContent = "Please enter a valid email.";
             return false;
         }
         errors.email.textContent = "";
@@ -77,28 +76,40 @@ document.addEventListener("DOMContentLoaded", () => {
             validateMessage();
 
         submitBtn.disabled = !valid;
-
-        if (submitBtn.disabled) {
-            submitBtn.classList.add("disabled");
-        } else {
-            submitBtn.classList.remove("disabled");
-        }
+        submitBtn.classList.toggle("disabled", !valid);
     }
 
-    //listeners for each input or so
+    //validate as the user enters data
     firstName.addEventListener("input", () => { validateFirstName(); checkFormValidity(); });
     lastName.addEventListener("input", () => { validateLastName(); checkFormValidity(); });
     email.addEventListener("input", () => { validateEmail(); checkFormValidity(); });
     inquiry.addEventListener("change", () => { validateInquiry(); checkFormValidity(); });
     message.addEventListener("input", () => { validateMessage(); checkFormValidity(); });
 
-    //we don't allow submissions in any way if the form is invalid
+    //form submit event
     form.addEventListener("submit", (e) => {
+        e.preventDefault(); //to prevent the url from filling up with them form data
+
         checkFormValidity();
-        if (submitBtn.disabled) e.preventDefault();
+        if (submitBtn.disabled) return;
+
+        //success
+        successMsg.textContent = "Your message has been sent successfully!";
+        successMsg.classList.add("show");
+
+        //clear the form
+        form.reset();
+
+        //and disable the button again
+        submitBtn.disabled = true;
+        submitBtn.classList.add("disabled");
+
+        setTimeout(() => {
+            successMsg.classList.remove("show");
+        }, 4000);
     });
 
-    //make the form invalid as soon as the user loads the page. like when the page is firstly loaded we call this function
+    //we check that the form is valid when the website is first loaded
     checkFormValidity();
 });
 
