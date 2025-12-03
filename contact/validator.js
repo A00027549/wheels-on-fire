@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         errors.email.textContent = "";
         return true;
     }
-    
+
     function validateFooterEmail() {
     const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!pattern.test(footerEmail.value.trim())) {
@@ -97,6 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
     email.addEventListener("input", () => { validateEmail(); checkFormValidity(); });
     inquiry.addEventListener("change", () => { validateInquiry(); checkFormValidity(); });
     message.addEventListener("input", () => { validateMessage(); checkFormValidity(); });
+    footerEmail.addEventListener("input", validateFooterEmail);
+
 
     form.addEventListener("submit", (e) => {
         e.preventDefault();
