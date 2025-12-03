@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
             validateInquiry() &&
             validateMessage();
 
-        submitBtn.disabled = !valid;
-        submitBtn.classList.toggle("disabled", !valid);
+        //submitBtn.disabled = !valid;
+        //submitBtn.classList.toggle("disabled", !valid);
     }
 
     // Validate as the user enters data
@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Show the loading spinner
         submitBtn.classList.add("loading");
-        submitBtn.disabled = true;
 
         setTimeout(() => {
             submitBtn.classList.remove("loading");
@@ -117,8 +116,6 @@ document.addEventListener("DOMContentLoaded", () => {
             Object.values(errors).forEach(error => error.textContent = ""); // Clear errors
             checkFormValidity(); // Recheck form validity
 
-            submitBtn.disabled = true;
-            submitBtn.classList.add("disabled");
 
             // Hide the success message after 4 seconds
             setTimeout(() => {
