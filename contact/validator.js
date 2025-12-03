@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = document.getElementById("email");
     const inquiry = document.getElementById("inquiry-purpose");
     const message = document.getElementById("message");
+    const footerEmail = document.getElementById("footer-email");
+    const footerEmailError = document.getElementById("footer-email-error");
+
 
     const errors = {
         firstName: document.getElementById("first-name-error"),
@@ -14,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         email: document.getElementById("email-error"),
         inquiry: document.getElementById("inquiry-error"),
         message: document.getElementById("message-error"),
+        
     };
 
     const submitBtn = form.querySelector('button[type="submit"]');
